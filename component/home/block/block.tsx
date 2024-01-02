@@ -1,5 +1,6 @@
 import {BlockData} from "../../../data/block.data";
 import ArrowSvg from  "public/svg/arrow.svg";
+import React from "react";
 const BlockHome = () =>{
 
 
@@ -12,7 +13,7 @@ const BlockHome = () =>{
 
             {BlockData(1).map((block, index) => (
                 <div key={index} className={"lg:w-400 lg:h-300 border border-gray-300 shadow p-4 rounded-2xl  shadow-inset-y-5 shadow-md"}>
-                    {block.icon && <block.icon />}
+                    {block.icon && React.createElement(block.icon as React.FC<React.SVGProps<SVGSVGElement>>)}
                     <p className={"mt-2.5 font-medium text-2xl "}>{block.title}</p>
                     <p className={"text-size-18px mt-2.5"}>{block.des}</p>
 
